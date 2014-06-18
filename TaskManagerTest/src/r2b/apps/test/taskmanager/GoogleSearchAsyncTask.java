@@ -14,6 +14,7 @@ import r2b.apps.lib.taskmanager.BaseAsyncTask;
 
 public class GoogleSearchAsyncTask extends BaseAsyncTask {
 	
+	private long threadId;
 	private Updatable listener;
 	
 	public interface Updatable {
@@ -25,8 +26,14 @@ public class GoogleSearchAsyncTask extends BaseAsyncTask {
 		this.listener = listener;
 	}
 
+	public final long getThreadId() {
+		return threadId;
+	}
+	
 	@Override
 	protected Void doInBackground() throws Exception {
+		
+		threadId = Thread.currentThread().getId();
 		
 		InputStream in = null;
 		HttpURLConnection urlConnection = null;

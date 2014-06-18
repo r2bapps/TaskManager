@@ -1,5 +1,6 @@
 package r2b.apps.test.taskmanager;
 
+import junit.framework.Assert;
 import r2b.apps.lib.taskmanager.TaskManager;
 import r2b.apps.test.taskmanager.GoogleSearchAsyncTask.Updatable;
 import android.os.Bundle;
@@ -50,6 +51,10 @@ public class Runner extends FragmentActivity implements Updatable {
 				public void onClick(View v) {
 					try {
 						taskManager.execute(task);
+						
+						Assert.assertTrue("Thread ids must be diferent", 
+								task.getThreadId() != Thread.currentThread().getId());
+						
 					}
 					catch(Exception e) {
 						Log.e("Runner", e.toString());
