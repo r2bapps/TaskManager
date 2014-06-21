@@ -1,28 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="r2b.apps.test.taskmanager"
+    package="r2b.apps.test.taskmanager.test"
     android:versionCode="1"
     android:versionName="1.0" >
 
-    <uses-sdk
-        android:minSdkVersion="10"
-        android:targetSdkVersion="19" />
-    
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-sdk android:minSdkVersion="10" />
+
+    <instrumentation
+        android:name="android.test.InstrumentationTestRunner"
+        android:targetPackage="r2b.apps.test.taskmanager" />
 
     <application
-        android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name">
-        <activity
-            android:name="r2b.apps.test.taskmanager.Runner"
-            android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        android:label="@string/app_name" >
+        <uses-library android:name="android.test.runner" />
     </application>
 
 </manifest>

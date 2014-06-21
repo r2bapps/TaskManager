@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>TaskManagerTest</name>
+	<name>TaskManagerSample</name>
 	<comment></comment>
 	<projects>
-		<project>TaskManagerSample</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
