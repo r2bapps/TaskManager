@@ -8,6 +8,7 @@ Task management for Android
 Main functionality
 ------------------
 * Sync (running internally asynchronously) and Async tasks.
+* Task queue management.
 * Priority management.
 * Multithread management.
 * Samples of use.
@@ -18,7 +19,10 @@ Main functionality
 Description
 ===========
 It used Java thread pool execution, future tasks and more. It is quite simple and robust,
-perfect to replace Android AsyncTask when you do not need to come back to main thread.
+perfect to replace Android AsyncTask when you do not need to come back to main thread. 
+Or replace thread executions.
+It uses observer/observable pattern to callback when sync task finished.
+
 
 
 
