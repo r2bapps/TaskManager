@@ -35,6 +35,8 @@ package r2b.apps.lib.taskmanager;
 import java.util.concurrent.Callable;
 import java.util.concurrent.FutureTask;
 
+import r2b.apps.utils.Logger;
+
 /**
  * This class is useful for packaging any task implementation and 
  * run on a task pool with multithreading and priority support.
@@ -147,7 +149,16 @@ abstract class Task<V> implements Callable<V> {
 		// Useful to identify the task on debug
 		Thread.currentThread().setName(this.getClass().getSimpleName() + "<" + String.valueOf(id) + ">");
 		
-		return doInBackground();
+		long begin = System.currentTimeMillis();
+		
+		V result = doInBackground();
+		
+		Logger.performance(
+				this.getClass().getSimpleName(), 
+				"V doInBackground()", 
+				System.currentTimeMillis()-begin);
+		
+		return result;
 		
 	}
 
