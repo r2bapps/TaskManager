@@ -1,3 +1,6 @@
+<b>Development closed</b>
+
+![Development closed](https://raw.githubusercontent.com/r2bapps/DAOLite/gh-pages/greenline.png?raw=true)
 TaskManager
 ===========
 
